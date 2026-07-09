@@ -7,9 +7,6 @@ import org.springframework.data.mongodb.MongoTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-//Username: ajeetsinghrawat1999_db_user
-//Password: nHD9GyHvhfEmlqC2
-
 
 @SpringBootApplication
 @EnableTransactionManagement
