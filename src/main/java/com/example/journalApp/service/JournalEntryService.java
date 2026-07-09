@@ -64,7 +64,7 @@ public class JournalEntryService {
              removed= user.getJournalEntries().removeIf(x ->x.getId().equals(id));
             if(removed){
                 userService.saveUser(user);
-                journalEntryRepository.deleteById(id);  
+                journalEntryRepository.deleteById(id);
             }
         } catch (Exception e) {
             log.error("Error",e);
