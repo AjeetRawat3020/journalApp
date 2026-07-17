@@ -1,8 +1,7 @@
     package com.example.journalApp.entity;
 
     import jakarta.annotation.Nonnull;
-    import lombok.Data;
-    import lombok.NonNull;
+    import lombok.*;
     import org.bson.types.ObjectId;
     import org.springframework.data.annotation.Id;
     import org.springframework.data.mongodb.core.index.Indexed;
@@ -15,6 +14,9 @@
 
     @Document(collection = "users")
     @Data
+    @Builder
+    @NoArgsConstructor
+    @AllArgsConstructor
     public class User {
 
         @Id
@@ -23,6 +25,10 @@
         @Indexed(unique = true)
         @NonNull
         private String userName;
+
+        private String email;
+
+        private boolean sentimentAnalysis;
 
         @NonNull
         private String password;

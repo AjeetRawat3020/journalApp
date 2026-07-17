@@ -30,13 +30,17 @@ public class JournalEntryController {
 
     @GetMapping
     public ResponseEntity<?> getAllJournalEntriesOfUsers() {
-        Authentication authentication= SecurityContextHolder.getContext().getAuthentication();
-        String userName= authentication.getName();
-        User user= userService.findByUserName(userName);
-        List<JournalEntry> all=user.getJournalEntries();
-        if(all!=null && !all.isEmpty()){
-            return new ResponseEntity<>(all,HttpStatus.OK);
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String userName = authentication.getName();
+
+        User user = userService.findByUserName(userName);
+
+        List<JournalEntry> all = user.getJournalEntries();
+
+        if (all != null && !all.isEmpty()) {
+            return new ResponseEntity<>(all, HttpStatus.OK);
         }
+
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
